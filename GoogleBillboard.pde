@@ -2,13 +2,26 @@ public final static String e = "2.7182818284590452353602874713526624977572470936
 public void setup()  
 {            
      noLoop();  
+     for(int i = 2; i < e.length()-10; i++)
+     {
+     	if(isPrime(Double.parseDouble(e.substring(i,i+10))))
+     	{
+     		System.out.println(e.substring(i,i+10));
+     		break;
+     	}
+     }
 }  
 public void draw()  
 {   
 	//not needed for this assignment
 }  
-public boolean isPrime(double dNum)  
+public boolean isPrime(double num)  
 {   
     //to be finished later   
-    return true;  
+	  if(num < 2)
+	    return false;
+	  for(int i = 2; i <= Math.sqrt(num); i++)
+	    if(num % i == 0)
+	      return false;
+	  return true;
 } 
